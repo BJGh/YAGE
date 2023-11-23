@@ -34,7 +34,6 @@ namespace YAGE.Base
         // Create delegate for static function and subscribe it to this event
         private delegate void staticFunctionDelegate();
 
-        //C++ TO C# CONVERTER TASK: The += operator cannot be overloaded in C#:
         public static void operator +(staticFunctionDelegate staticFunction)
         {
             Subscribe(staticFunction);
@@ -48,8 +47,6 @@ namespace YAGE.Base
         }
 
         // Create delegate for function in object and subscribe it to this event
-        //C++ TO C# CONVERTER WARNING: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
-        //ORIGINAL LINE: template <class T>
         private delegate void objectFunctionDelegate();
 
         public void Subscribe<T>(T @object, objectFunctionDelegate objectFunction)
@@ -59,8 +56,6 @@ namespace YAGE.Base
         }
 
         // Calls all subscribers
-        //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-        //ORIGINAL LINE: inline void operator ()() const
         public void functorMethod()
         {
             int count = subscribers.GetSize();
@@ -71,8 +66,6 @@ namespace YAGE.Base
         }
 
         // Get all subscribers in this event
-        //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-        //ORIGINAL LINE: inline const DynamicArray<IDelegate*>& GetSubscribers() const
         public DynamicArray<IDelegate> GetSubscribers()
         {
             return new DynamicArray<IDelegate>(subscribers);
