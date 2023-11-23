@@ -31,8 +31,6 @@ namespace YAGE.Base
         }
 
         // Create delegate for function in object and subscribe it to this event
-        //C++ TO C# CONVERTER WARNING: The original C++ template specifier was replaced with a C# generic specifier, which may not produce the same behavior:
-        //ORIGINAL LINE: template <class T>
         private delegate void objectFunctionDelegate(D data);
 
         public void Subscribe<T>(T @object, objectFunctionDelegate objectFunction)
@@ -42,8 +40,6 @@ namespace YAGE.Base
         }
 
         // Calls all subscribers
-        //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-        //ORIGINAL LINE: inline void operator ()(const D * data) const
         public void functorMethod(D data)
         {
             int count = subscribers.GetSize();
@@ -54,8 +50,6 @@ namespace YAGE.Base
         }
 
         // Get all subscribers in this event
-        //C++ TO C# CONVERTER WARNING: 'const' methods are not available in C#:
-        //ORIGINAL LINE: inline const DynamicArray<IDelegateParam<D>*>& GetSubscribers() const
         public DynamicArray<IDelegateParam<D>> GetSubscribers()
         {
             return new DynamicArray<IDelegateParam<D>>(subscribers);
